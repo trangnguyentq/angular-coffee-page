@@ -1,0 +1,10 @@
+/* app css stylesheet */
+
+.table table-striped{
+  margin: 0 auto
+}
+
+.backbutton{
+  width: 100%;
+  background-color: LightCoral
+}

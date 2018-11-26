@@ -1,0 +1,26 @@
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+<div class="container" ng-controller="SimpleController">
+    
+    Search: <input type = 'text' ng-model='$ctrl.query' />
+    
+    <table st-table="coffees" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Reviews:</th>
+        <th>Brand:</th> 
+        <th>Coffee Title:</th>
+        <th>Country:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="coffee in coffees | filter: $ctrl.query | orderBy: 'name' ">
+        <td><a href="#!/reviews/{{coffee.id}}" class="thumb">Reviews</a></td>
+        <td>{{coffee.brand}}</td>
+        <td>{{coffee.name}}</td>
+        <td>{{coffee.country}}</td>
+      </tr>
+    </tbody>
+    </table>
+    
+</div>

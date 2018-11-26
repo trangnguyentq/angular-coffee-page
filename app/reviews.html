@@ -1,0 +1,19 @@
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-smart-table/dist/smart-table.js"></script>
+         
+<div class="container" ng-controller="SimpleController">
+    <span><b>Review for {{coffees[coffeeId - 1].brand}} {{coffees[coffeeId - 1].name}}</b></span>
+    <table st-table="coffees[coffeeId - 1].reviews" class="table table-striped">
+      <tr>
+        <th>Reviewer:</th>
+        <th>Comment:</th> 
+        <th>Rating:</th>
+      </tr>
+      <tr ng-repeat="review in coffees[coffeeId - 1].reviews ">
+        <td>{{review.reviewer}}</td>
+        <td>{{review.comment}}</td>
+        <td uib-rating ng-model="review.rating" max="10" read-only="true"></td>
+      </tr>
+    </table>
+    
+</div>
